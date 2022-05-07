@@ -28,10 +28,10 @@
 <script>
   "use strict";
 
-  let num = prompt('Введите число: ');
-  let hundreds = Number.parseInt((num/100)%10);
-  let dozens = Number.parseInt((num % 100)/10);
-  let units = num % 10;
+  const num = prompt('Введите число: ');
+  const hundreds = Number.parseInt((num/100)%10);
+  const dozens = Number.parseInt((num % 100)/10);
+  const units = num % 10;
 
   alert (`"В числе ${num} количество сотен: ${hundreds}, десятков: ${dozens}, единиц: ${units}"`)
   console.log (`"В числе ${num} количество сотен: ${hundreds}, десятков: ${dozens}, единиц: ${units}"`)
