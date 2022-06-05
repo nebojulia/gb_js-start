@@ -20,14 +20,13 @@
   "use strict";
 
   for (let i = 0; i <= 10; i++) {
-    if (i % 2 === 0 && i != 0) {
-      console.log(`${i} - это четное число`)
+    if (i % 2 === 0 && i !== 0) {
+      console.log(`${i} - это четное число`);
     }
-    if (i % 2 === 1) {
-      console.log(`${i} - это нечетное число`)
-    }
-    if (i === 0) {
-      console.log(`${i} - это ноль`)
+    else if (i % 2 === 1) {
+      console.log(`${i} - это нечетное число`);
+    } else {
+      console.log(`${i} - это ноль`);
     }
   }
   

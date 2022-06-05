@@ -47,14 +47,14 @@
 
   //1
 
-  let produstList = products.filter(function(product) {
+  const produstList = products.filter(function(product) {
     return product.photos?.length > 0;
   })
   console.log(produstList);
 
   //2
 
-  let productsSort = products.sort(function(x, y) {
+  const productsSort = products.sort(function(x, y) {
     if (y.price > x.price) {
       return -1;
     }
@@ -69,7 +69,6 @@
   
   products.sort((x, y) => x.price - y.price);
   console.log(products);
-
 
 </script>
 </body>
