@@ -58,7 +58,7 @@
     this.date = new Date();
   }
 
-  PostES5.prototype.edit = function(content) {
+  PostES5.prototype.edit = function (content) {
     this.content = content;
     this.date = new Date();
   };
@@ -80,10 +80,11 @@
   
   AttachedPostES5.prototype.makeTextHighlighted = function() {
     this.highlighted = true;
+    this.date = new Date();
   };
 
-  const atcPost1 = new AttachedPostES5('Петя', 'Ода Пети про пирожки с картошкой.')
-  const atcPost2 = new AttachedPostES5('Петя', 'Ода Пети про пирожки с капустой.')
+  const atcPost1 = new AttachedPostES5('Петя', 'Ода Пети про пирожки с картошкой.');
+  const atcPost2 = new AttachedPostES5('Петя', 'Ода Пети про пирожки с капустой.');
 
   console.log(atcPost1);
   atcPost2.makeTextHighlighted();
@@ -97,10 +98,11 @@
       this.content = content;
       this.date = new Date();
     }
+
     edit(content) {
       this.content = content;
       this.date = new Date();
-    };
+    }
   }
 
   const post2 = new PostES6('Лёша', 'История о моей любви к сыру и как же мне грустно что он закончился');
@@ -112,16 +114,18 @@
 
   class AttachedPostES6 extends PostES6 {
     constructor(name, content) {
-      super(name, content)
+      super(name, content);
       this.highlighted = false;
     }
+
     makeTextHighlighted() {
       this.highlighted = true;
-    };
+      this.date = new Date();
+    }
   }
 
-  const atcPost3 = new AttachedPostES6('Ваня', 'Осторожнее с пирожками. Скоро лето.')
-  const atcPost4 = new AttachedPostES6('Ваня', 'Пирожков много не бывает. Хорошего человека тоже должно быть много.')
+  const atcPost3 = new AttachedPostES6('Ваня', 'Осторожнее с пирожками. Скоро лето.');
+  const atcPost4 = new AttachedPostES6('Ваня', 'Пирожков много не бывает. Хорошего человека тоже должно быть много.');
 
   console.log(atcPost3);
   atcPost4.makeTextHighlighted();

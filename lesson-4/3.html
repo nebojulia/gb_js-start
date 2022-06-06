@@ -31,7 +31,6 @@
  <script>
   "use strict";
 
-
   /**
   Функция getDigitsOfNumber раскладывает число по разрядам 
   и возвращает объект с записанными разрядами числа.
@@ -39,15 +38,14 @@
   @returns {object} Возвращает пустой объект, если введенное число не соответствует параметрам 
   и раскладывает число по разрядам, в случае соответствия.
   */
-
   function getDigitsOfNumber(num) {
-    if (!Number.isInteger(num) || 0 > num || num > 999) {
-      console.error(`Ошибка! ${num} не является целым положительным числом из диапазона 0-999.`)
+    if (!Number.isInteger(num) || num < 0|| num > 999) {
+      console.error(`Ошибка! ${num} не является целым положительным числом из диапазона 0-999.`);
       return {};
     } 
     return {
-        hundreds: Number.parseInt((num/100)%10),
-        dozens: Number.parseInt((num % 100)/10),
+        hundreds: Number.parseInt((num / 100) % 10),
+        dozens: Number.parseInt((num % 100) / 10),
         units: num % 10,
       };
     }
@@ -55,22 +53,16 @@
     console.log(getDigitsOfNumber(567.1));
     console.log(getDigitsOfNumber(567));
   
-
-/**  Вначале написала так. При любом значении num заходит в if и раскладывает на разряды.
- * Почему так пока не понимаю. Проверки вроде те же, но в разном порядке. 
- * Странно что проверка Number.isInteger(num) будто вообще не проходит, хотя отладчик в нее заглядывает.
- * Отрицательные числа тоже пропускает.
- * 
- * 
+/**  
   function getDigitsOfNumber(num) {
-    if (Number.isInteger(num) || 0 < num || num <= 999) {
-      const hundreds = Number.parseInt((num/100)%10);
-      const dozens = Number.parseInt((num % 100)/10);
+    if (Number.isInteger(num) && 0 < num && num <= 999) {
+      const hundreds = Number.parseInt((num / 100) % 10);
+      const dozens = Number.parseInt((num % 100) / 10);
       const units = num % 10;
       return (`сотен: ${hundreds}, десятков: ${dozens}, единиц: ${units}`)
-    } else {
-      console.error(`Ошибка! ${num} не является целым положительным числом из диапазона 0-999.`)
-      return {};
+    }
+    console.error(`Ошибка! ${num} не является целым положительным числом из диапазона 0-999.`);
+    return {};
     }
   }
 
