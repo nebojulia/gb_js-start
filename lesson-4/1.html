@@ -27,16 +27,16 @@
     this.price = price;
   }
 
-  ProductES5.prototype.make25Discount = function() {
+  ProductES5.prototype.make25Discount = function () {
     this.price *= 0.75;
   };
 
-  const prod1 = new ProductES5 ('Товар', 100);
+  const prod1 = new ProductES5('Товар', 100);
 
   prod1.make25Discount();
 
-  console.log (prod1);
-  console.log (prod1.price);
+  console.log(prod1);
+  console.log(prod1.price);
   
   // ES6
 
@@ -45,17 +45,18 @@
       this.name = name;
       this.price = price;
     }
+    
     make25Discount() {
       this.price *= 0.75;
     }
   }
 
-  const prod2 = new ProductES6 ('Товар', 200);
+  const prod2 = new ProductES6('Товар', 200);
 
   prod2.make25Discount();
 
-  console.log (prod2);
-  console.log (prod2.price);
+  console.log(prod2);
+  console.log(prod2.price);
 
 </script>
 </body>
