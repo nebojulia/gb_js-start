@@ -90,7 +90,26 @@
   данному полю).
   Если поле было чем-либо заполнено, подсветку (класс error) необходимо убрать.
    */
+  const formEl = document.querySelector('form');
+  const inputsEls = formEl.querySelectorAll('input, select');
 
+  formEl.addEventListener('submit', event => {
+    inputsEls.forEach(el => {
+      if (el.value === '') {
+        el.classList.add('error');
+        event.preventDefault();
+      }
+    });
+  });
+
+  formEl.addEventListener('input', event => {
+    if (!event.target.classList.contains('form-control')) {
+      return;
+    }
+    event.target.value === '' 
+      ? event.target.classList.add('error') 
+      : event.target.classList.remove('error');
+  });
 
 </script>
 </body>

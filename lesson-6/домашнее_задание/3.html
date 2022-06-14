@@ -37,21 +37,54 @@
   1. При наведении на любую из звезд, данной звезде должен ставиться класс
   golden, также такой класс должен ставиться всем звездам до нее слева.
   */
+  document.querySelector('.stars_container').addEventListener('mouseover', event => {
+    if (!event.target.classList.contains('fas', 'fa-star')) {
+      return;
+    }
 
+    let star = event.target;
+    do {
+      star.classList.add('golden');
+      star = star.previousElementSibling;
+    } while (star);
+  });
 
   /*
   2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
   задания должны быть удалены.
    */
+  document.querySelector('.stars_container').addEventListener('mouseout', event => {
+    if (!event.target.classList.contains('fas', 'fa-star')) {
+      return;
+    }
 
+    let star = event.target;
+    do {
+      star.classList.remove('golden');
+      star = star.previousElementSibling;
+    } while (star);
+  });
 
   /*
   3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
   звезды (временно могут становиться черными). Почему так? Напишите словами.
   Можем ли мы это исправить? Если да, то предложите решение.
   */
+  /**При выведении курсора из области звездочки мы попадаем в пустой промежуток 
+  и срабатывает код из задачи №2.
+  При наведении на следующую звезду, снова срабатывает код из задачи №1.
 
-
+  Это особенность работы кода html - при переносе строк в среде разработки, 
+  браузер считывает это как пустые пробелы.
+  
+  Исправить можно, если записать все звезды в одну строчку, но это так себе вариант.
+  Можно эти пробелы удалить.
+*/
+  document.querySelector('.stars_container').childNodes.forEach(el => {
+    if (el.nodeName === '#text') {
+      el.remove();
+    }
+  });
 </script>
 </body>
 </html>
