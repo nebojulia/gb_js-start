@@ -59,14 +59,14 @@
     X6: "Знаю, программирование это нелегко.",
     H99: "Однако, программирование, в итоге, принесет свои плоды.",
   };
-
+  const textEl = document.querySelector('.text');
   document.querySelector('.nav').addEventListener('click', event => {
-    if (!event.target.classList.contains('nav-link')){
+    if (!event.target.classList.contains('nav-link')) {
       return;
     }
     document.querySelector('.active').classList.remove('active');
     event.target.classList.add('active');
-    document.querySelector('.text').textContent = panelText[event.target.parentElement.dataset.text];
+    textEl.textContent = panelText[event.target.parentElement.dataset.text];
   });
   /*
   2. Необходимо сделать так, чтобы при изменении input'а менялся и размер шрифта
@@ -78,7 +78,7 @@
   const rangeEl = document.querySelector('input');
   const inputDivElStyle = getComputedStyle(inputDivEl);
 
-  rangeEl.value = inputDivElStyle.fontSize;
+  rangeEl.value = Number.parseInt(inputDivElStyle.fontSize);
   rangeEl.addEventListener('input', event => {
     inputDivEl.style.fontSize = `${event.target.value}px`;
   });
