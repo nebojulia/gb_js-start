@@ -9,6 +9,9 @@ body {
     height: 74px;
     padding: 18px 16px;
     box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 .header .container {
@@ -58,6 +61,7 @@ body {
 
 .cartIconWrap {
     position: relative;
+    cursor: pointer;
 }
 
 .cartIconWrap span {
@@ -78,8 +82,8 @@ body {
 .cartList {
     height: 320px;
     width: 540px;
-    position: absolute;
-    right: 0;
+    position: fixed;
+    right: 24px;
     top: 74px;
     background: #ffffff;
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
@@ -91,6 +95,7 @@ body {
 .newArrivals {
     background: #f8f3f4;
     min-height: 148px;
+    padding-top: 74px;
 }
 
 .newArrivals h1 {
