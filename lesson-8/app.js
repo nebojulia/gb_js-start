@@ -1,12 +1,12 @@
 'use strict';
 
-let fitlerPopup = document.querySelector('.filterPopup');
-let fitlerLabel = document.querySelector('.filterLabel');
+let filterPopup = document.querySelector('.filterPopup');
+let filterLabel = document.querySelector('.filterLabel');
 let filterIcon = document.querySelector('.filterIcon');
 
-fitlerLabel.addEventListener('click', function() {
-    fitlerPopup.classList.toggle('hidden');
-    fitlerLabel.classList.toggle('filterLabelPink');
+filterLabel.addEventListener('click', function() {
+    filterPopup.classList.toggle('hidden');
+    filterLabel.classList.toggle('filterLabelPink');
     filterIcon.classList.toggle('filterIconPink');
 
     if (filterIcon.getAttribute('src') === 'images/filter.svg') {
@@ -27,4 +27,12 @@ let filterSizes = document.querySelector('.filterSizes');
 let filterSizeWrap = document.querySelector('.filterSizeWrap');
 filterSizeWrap.addEventListener('click', function() {
     filterSizes.classList.toggle('hidden');
+});
+
+let addButton = document.querySelector('.addToCardButton');
+let cartIconWrap = document.querySelector('.cartIconWrap');
+let cartList = document.querySelector('.cartList');
+
+cartIconWrap.addEventListener('click', () => {
+    cartList.classList.toggle('hidden');
 });

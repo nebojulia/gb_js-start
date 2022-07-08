@@ -75,6 +75,19 @@ body {
     line-height: 19px;
 }
 
+.cartList {
+    height: 320px;
+    width: 540px;
+    position: absolute;
+    right: 0;
+    top: 74px;
+    background: #ffffff;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    padding: 8px;
+    z-index: 1;
+    overflow-y: auto;
+}
+
 .newArrivals {
     background: #f8f3f4;
     min-height: 148px;
