@@ -28,11 +28,3 @@ let filterSizeWrap = document.querySelector('.filterSizeWrap');
 filterSizeWrap.addEventListener('click', function() {
     filterSizes.classList.toggle('hidden');
 });
-
-let addButton = document.querySelector('.addToCardButton');
-let cartIconWrap = document.querySelector('.cartIconWrap');
-let cartList = document.querySelector('.cartList');
-
-cartIconWrap.addEventListener('click', () => {
-    cartList.classList.toggle('hidden');
-});

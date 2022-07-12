@@ -23,47 +23,25 @@
 
                 <span class="cartIconWrap">
                     <img class="cartIcon" src="images/cart.png" alt="">
-                    <span>5</span>
+                    <span class="cartProductNum">0</span>
                 </span>
             </div>
         </div>
     </div>
 
     <div class="cartList hidden">
-        <div class="cartList__grid">
+        <div class="cartList__header">
             <div>Название товара</div>
             <div>Количество</div>
             <div>Цена за шт.</div>
             <div>Итого:</div>
         </div>
-        <div class="cardList__items">
-            <div class="cardList__cols">
-                <p>ТОВАРЫ</p>
-                <p>ТОВАРЫ</p>
-                <p>ТОВАРЫ</p>
-            </div>
-            <div class="cardList__cols">
-                <p>10 шт.</p>
-                <p>10 шт.</p>
-                <p>10 шт.</p>
-            </div>
-            <div class="cardList__cols">
-                <p>50 руб.</p>
-                <p>50 руб.</p>
-                <p>50 руб.</p>
-            </div>
-            <div class="cardList__cols">
-                <p>500 руб.</p>
-                <p>500 руб.</p>
-                <p>500 руб.</p>
-            </div>
-            
-        </div>
-        <div class="cardList__total">
+
+        <div class="cartList__total">
             <div>
                 Товаров в корзине на сумму:
             </div>
-            <span>100</span>
+            <span class="cartList__totalPrice">100</span>
         </div>
     </div>
 
@@ -175,7 +153,7 @@
 
         <div class="featuredItems">
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="1" data-name="Товар 1" data-price="22">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/1.jpg" alt="">
@@ -203,7 +181,7 @@
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="2" data-name="Товар 2" data-price="71">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/2.jpg" alt="">
@@ -231,7 +209,7 @@
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem"  data-id="3" data-name="Товар 3" data-price="51">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/3.jpg" alt="">
@@ -259,7 +237,7 @@
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="4" data-name="Товар 4" data-price="68">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/4.jpg" alt="">
@@ -287,7 +265,7 @@
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="5" data-name="Товар 5" data-price="35">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/5.jpg" alt="">
@@ -315,7 +293,7 @@
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="6" data-name="Товар 6" data-price="27">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/6.jpg" alt="">
@@ -444,6 +422,7 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="basket.js"></script>
 </body>
 
 </html>
