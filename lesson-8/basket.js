@@ -69,9 +69,15 @@ function renderProductsInCart(id) {
     renderNewProductsInCart(id);
 }
 
+/**Застряла на этапе появления строки с товаром в cartList.
+ * Понимаю, что видимо обращаюсь не к тому элементу.
+ * Пробовала сделать по примеру видео дз, но изначально хадавала свои названия и в них же запуталась :)
+ * Продолжаю копаться, буду благодарна, если укажете на ошибку.
+ */
+
 function renderNewProductsInCart(productId) {
-    const newProductRow = 
-    `<div class="cartList__items" data-productId="${productId}">
+    const newProductRow = `
+    <div class="cartList__items" data-productId="${productId}">
             <div>
                 ${cart[productId].name}
             </div>
@@ -82,9 +88,9 @@ function renderNewProductsInCart(productId) {
                 ${cart[productId].price}
             </div>
             <div>
-                <span>${cart[productId].price * cart[productId].count}</span>
+                <span>${(cart[productId].price * cart[productId].count.toFixed(2))}</span>
             </div>
-        </div>`
-    ;
+        </div>
+    `;
         cartTotalEl.insertAdjacentHTML('beforebegin', newProductRow);
 }
