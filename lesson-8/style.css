@@ -80,7 +80,6 @@ body {
 }
 
 .cartList {
-    
     width: 540px;
     position: fixed;
     right: 24px;
@@ -91,7 +90,6 @@ body {
     z-index: 1;
     overflow-y: auto;
     display: grid;
-    grid-template-rows: 1fr 1fr;
     gap: 12px;
 }
 

@@ -35,29 +35,24 @@ function addToCart(id, name, price) {
             count: 0,
         };
     }
-        cart[id].count++;
-        cartCounter.textContent = getTotalCartCount().toString();
-        totalPrice.textContent = getTotalCartPrice().toFixed(2);
-        renderProductsInCart();
+    cart[id].count++;
+    cartCounter.textContent = getTotalCartCount().toString();
+    totalPrice.textContent = getTotalCartPrice().toFixed(2);
+    renderProductsInCart(id);
 }
 
 function getTotalCartCount() {
-    return Object.values(cart)
+    /**return Object.values(cart)
         .reduce((acc, product) => acc + product.count, 0);
+    */
     
-    /**  Вопрос
-     * 
-     * Повторила как в видео дз,
-     *  при клике на кнопку "Add to Cart" в counter выводится NaN.
-     * 
     const productsArr = Object.values(cart);
     let count = 0;
 
-    for (const product in productsArr) {
+    for (const product of productsArr) {
         count += product.count;
     }
     return count;
-    */
 }
 
 function getTotalCartPrice() {
@@ -66,31 +61,32 @@ function getTotalCartPrice() {
 }
 
 function renderProductsInCart(id) {
-    renderNewProductsInCart(id);
+    const cartRowEl = cartList.
+        querySelector(`.cartList__items[data-productId="${id}"]`);
+    if (!cartRowEl) {
+        renderNewProductsInCart(id);
+        return;
+    }
+    cartRowEl.querySelector('.itemCount').textContent = cart[id].count;
+    cartRowEl.querySelector('.itemTotal').textContent = (cart[id].count * cart[id].price).toFixed(2);
 }
-
-/**Застряла на этапе появления строки с товаром в cartList.
- * Понимаю, что видимо обращаюсь не к тому элементу.
- * Пробовала сделать по примеру видео дз, но изначально хадавала свои названия и в них же запуталась :)
- * Продолжаю копаться, буду благодарна, если укажете на ошибку.
- */
 
 function renderNewProductsInCart(productId) {
     const newProductRow = `
     <div class="cartList__items" data-productId="${productId}">
-            <div>
+            <div class = "itemName">
                 ${cart[productId].name}
             </div>
             <div>
-                <span>${cart[productId].count}</span> шт.
+                <span class = "itemCount">${cart[productId].count}</span> шт.
             </div>
-            <div>
+            <div class = "itemPrice">
                 ${cart[productId].price}
             </div>
             <div>
-                <span>${(cart[productId].price * cart[productId].count.toFixed(2))}</span>
+                <span class = "itemTotal">${(cart[productId].price * cart[productId].count.toFixed(2))}</span>
             </div>
         </div>
     `;
-        cartTotalEl.insertAdjacentHTML('beforebegin', newProductRow);
+    cartTotalEl.insertAdjacentHTML('beforebegin', newProductRow);
 }
